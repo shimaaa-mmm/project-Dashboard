@@ -15,11 +15,12 @@ const App = () => {
   useEffect(() => {
     const currentThemeColor = localStorage.getItem('colorMode');
     const currentThemeMode = localStorage.getItem('themeMode');
+
     if (currentThemeColor && currentThemeMode) {
       setCurrentColor(currentThemeColor);
       setCurrentMode(currentThemeMode);
     }
-  }, []);
+  }, [setCurrentColor, setCurrentMode]);
 
   return (
     <div className={currentMode === 'Dark' ? 'dark' : ''}>
